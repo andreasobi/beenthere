@@ -12,14 +12,23 @@ const RootLayout = ({ children }) => {
   return (
     <html lang="en">
       <body>
+
+      { /* Login Session */ }
         <Provider>
+
+          { /* Background */ }
           <div className="main">
             <div className="grandient"></div>
           </div>
+
           <main className="app">
+
+          { /* Navigationbar */ }
             <Nav>
             </Nav>
+            
             {children}
+
           </main>
         </Provider>
       </body>
