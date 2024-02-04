@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { useSession } from "next-auth/react";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 
 import Form from '@components/Form';
 
@@ -17,11 +17,13 @@ const CreateTrip = () => {
     });
 
     const createTrip = async (e) => {
+
+        //Prevents reload of the browser
         e.preventDefault();
         setSubmitting(true);
 
         try {
-            const res = await fetch ('/api/trip/new',
+            const response = await fetch ('/api/trip/new',
             {
                 method: 'POST',
                 body: JSON.stringify({
@@ -29,8 +31,7 @@ const CreateTrip = () => {
                     userId: session?.user.id,
                     tag: post.tag
                 })
-            })
-
+            });
             if(response.ok) {
                 router.push('/');
             }
@@ -40,7 +41,7 @@ const CreateTrip = () => {
         } finally {
             setSubmitting(false);
         }
-    }
+    };
 
   return (
     <Form

@@ -14,7 +14,7 @@ const Home = () => {
         Share your trips easy with your friends
       </p>
 
-      <Feed />
+      <Feed/>
       
     </section>
   );
