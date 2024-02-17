@@ -5,7 +5,6 @@ import { useSession } from 'next-auth/react';
 import { useRouter } from 'next/navigation';
 
 import Profile from '@components/profile';
-import { Router } from 'next/router';
 
 const MyProfile = () => {
     const router = useRouter();
@@ -25,10 +24,24 @@ const MyProfile = () => {
         router.push(`/update-trip?id=${trip._id}`);
     }
 
-    const handleDelete = (trip) => {
+    const handleDelete = async (trip) => {
+        const userHasConfirmed = confirm("Are you sure you want to delete this Trip?");
 
+        if(userHasConfirmed){
+            try {
+                await fetch(`/api/trip/${trip._id.toString()}`, {
+                    method: 'DELETE'
+                });
+
+                const filteredPosts = posts.filter((p) => p._id !== trip._id);
+                setPosts(filteredPosts);
+
+            } catch (error) {
+                onsole.error('Error deleting trip:', error);
+                console.log(error);
+            }
+        }
     }
-
     return (
         <Profile
          name="My"

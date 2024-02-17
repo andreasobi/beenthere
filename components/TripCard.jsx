@@ -23,14 +23,14 @@ const TripCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
     <div className="trip_card">
       <div className="flex justify-between items-start gap-5">
         <div className="flex-1 flex justify-start items-center gap-3 cursor-pointer">
-
-          <Image
-            src={post.creator.image} 
-            alt="user_image"
+        
+          {/* <Image
+            src={'/assets/icons/tick.svg'} 
+            alt="User Image"
             width={40}
             height={40}
             className="rounded-full object-contain"
-          />
+          /> */}
 
           <div className="flex flex-col">
             <h3 className="font-satoshi font-semibold text-gray-900">
@@ -50,6 +50,7 @@ const TripCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
             }
             width={12}
             height={12}
+            alt="Copy Button Image"
           />
         </div>
 

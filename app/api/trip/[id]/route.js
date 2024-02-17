@@ -40,7 +40,7 @@ export const PATCH = async (request, {params}) => {
 }
 
 // DELETE Trips
-export const DELETE = async (request, {paramt}) => {
+export const DELETE = async (request, {params}) => {
     try {
         await connectToDB();
         const toDeleteTrip = await Trip.findByIdAndDelete(params.id);
