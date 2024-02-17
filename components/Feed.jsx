@@ -28,7 +28,6 @@ const Feed = () => {
       const fetchPosts = async () => {
         const response = await fetch('api/trip');
         const data = await response.json();
-
         setPosts(data);
       }
 
@@ -37,6 +36,7 @@ const Feed = () => {
 
   return (
     <section className="feed">
+      
       <form className="relative w-full flex-center">
         <input 
           type="text"
