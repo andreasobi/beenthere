@@ -1,5 +1,8 @@
 "use client";
 
+import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
+
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
@@ -37,12 +40,15 @@ const Nav = () => {
       <div className="sm:flex hidden">
         {session?.user ? (
           <div className="flex gap-3 md:gap-5">
-            <Link href="/create-trip" className="black_btn">
-              Create Trip
-            </Link>
-            <button type="button" onClick={signOut} className="outline_btn">
+            <Button asChild>
+              <Link href="/create-trip" className="black_btn">
+                Create Trip
+              </Link>
+            </Button>
+            
+            <Button type="button" onClick={signOut} className="outline_btn">
               Sign Out
-            </button>
+            </Button>
           
             <Link href="/profile">
               <Image
