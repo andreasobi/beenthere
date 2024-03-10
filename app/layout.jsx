@@ -1,14 +1,14 @@
 import "@styles/globals.css";
-import { Inter as FontSans } from "next/font/google"
+import { Poppins } from "next/font/google"
 
 import Nav from "@components/Nav";
 import Provider from "@components/Provider";
 
 import { cn } from "../lib/utils"
 
-export const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
+export const poppins = Poppins({
+  subsets: ['latin'],
+  weight: '400',
 })
 
 export const metadata = {
@@ -19,12 +19,7 @@ export const metadata = {
 const RootLayout = ({ children }) => {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}
-      >
+      <body className={poppins.className}>
 
       { /* Login Session */ }
         <Provider>
@@ -34,7 +29,7 @@ const RootLayout = ({ children }) => {
             <div className="grandient"></div>
           </div>
 
-          <main className="app">
+          <main className="app" >
 
           { /* Navigationbar */ }
             <Nav>

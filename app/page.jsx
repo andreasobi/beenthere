@@ -5,13 +5,12 @@ const Home = () => {
     <section className="w-full flex-center flex-col">
 
       <h1 className="head_text text-center">
-        Discover and Share
+        Share Your Trips
         <br className="max-md:hidden" />
-        <span className="orange_gradient"> Share Experiences</span>
       </h1>
 
       <p className="desc text-center">
-        Share your trips easy with your friends
+        Edit, Share, Rate
       </p>
 
       <Feed/>

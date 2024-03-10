@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Button } from "@/components/ui/button"
+import { buttonVariants } from "@/components/ui/button"
 
 const Form = ({type, post, setPost, submitting, handleSubmit}) => {
   return (
@@ -46,23 +48,22 @@ const Form = ({type, post, setPost, submitting, handleSubmit}) => {
         </label>
 
         <div className="flex-end mx-3 mb-5 gap-4">
-            <Link href="/" className="text-gray-500 text-sm">
-              Cancel
-            </Link>
 
-            <button
+          <Button
               type="submit"
               disable={submitting}
-              className="px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white"
             >
               {submitting ? `${type}...`: type}
-            </button>
+            </Button>
 
+            <Button asChild variant="secondary">
+              <Link href="/">
+                Cancel
+              </Link>
+            </Button>
         </div>
-
       </form>
     </section>
   )
 };
-
 export default Form;

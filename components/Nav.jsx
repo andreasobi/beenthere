@@ -27,13 +27,12 @@ const Nav = () => {
 
       <Link href="/" className="flex gap-2 flex-center">
         <Image
-          src="/assets/images/logo.svg"
+          src="/assets/images/beenthere-logo.png"
           alt="Beenthere Logo"
-          width={30}
-          height={30}
+          width={250}
+          height={100}
           className="object-contain"
         ></Image>
-        <p className="logo_text">Beenthere</p>
       </Link>
 
       {/* Desktop Navigation */}
@@ -41,12 +40,12 @@ const Nav = () => {
         {session?.user ? (
           <div className="flex gap-3 md:gap-5">
             <Button asChild>
-              <Link href="/create-trip" className="black_btn">
+              <Link href="/create-trip">
                 Create Trip
               </Link>
             </Button>
             
-            <Button type="button" onClick={signOut} className="outline_btn">
+            <Button variant="outline" onClick={signOut}>
               Sign Out
             </Button>
           
@@ -60,17 +59,19 @@ const Nav = () => {
               </Image>
             </Link>
           </div>
-        ) : (
+        ) : 
+        (
           <>
             {providers && 
               Object.values(providers).map((provider) => (
-                <button
+                <Button
+                  variant="outline" 
                   type="button"
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
-                  className="black_btn">
+                >
                   Sign In
-                </button>
+                </Button>
               ))}
           </>
         )}
@@ -91,27 +92,33 @@ const Nav = () => {
           
               {toggleDropdown && (
                 <div className="dropdown">
-                  <Link
-                    href="/profile"
-                    className="dropdown_link"
-                    onClick={() => setToggleDropdown(false)}>
-                      My Profile
-                  </Link>
-                  <Link
-                    href="/create-trip"
-                    className="dropdown_link"
-                    onClick={() => setToggleDropdown(false)}>
-                      Create Trip
-                  </Link>
-                  <button 
-                  type="button"
-                  onClick={() => {
-                    setToggleDropdown(false);
-                    signOut();
+                  <Button asChild variant="link">
+                    <Link
+                      href="/profile"
+                      className="dropdown_link"
+                      onClick={() => setToggleDropdown(false)}>
+                        My Profile
+                    </Link>
+                  </Button>
+
+                  <Button asChild>
+                    <Link
+                      href="/create-trip"
+                      className="dropdown_link"
+                      onClick={() => setToggleDropdown(false)}>
+                        Create Trip
+                    </Link>
+                  </Button>
+                  
+                  <Button
+                    variant="outline"
+                    onClick={() => {
+                      setToggleDropdown(false);
+                      signOut();
                   }}
-                  className="mt-5 w-full black_btn">
+                  >
                     Sign Out
-                  </button>
+                  </Button>
                 </div>
               )}
           </div>
@@ -119,13 +126,13 @@ const Nav = () => {
           <>
             {providers && 
               Object.values(providers).map((provider) => (
-                <button
+                <Button
                   type="button"
                   key={provider.name}
                   onClick={() => signIn(provider.id)}
                   className="black_btn">
                   Sign In
-                </button>
+                </Button>
               ))}
           </>
         )}
