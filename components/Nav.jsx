@@ -25,11 +25,11 @@ const Nav = () => {
   return (
     <nav className="flex-between w-full mb-16 pt-3">
 
-      <Link href="/" className="flex gap-2 flex-center">
+      <Link href="/" className="flex gap-2 flex-center pt-2">
         <Image
-          src="/assets/images/beenthere-logo.png"
+          src="/assets/images/beenthere-logo-2.png"
           alt="Beenthere Logo"
-          width={250}
+          width={300}
           height={100}
           className="object-contain"
         ></Image>

@@ -49,7 +49,7 @@
   }
 
   .main {
-    background: radial-gradient(circle, rgba(230, 129, 5, 0) 0, #fffbf8 100%);
+    background: radial-gradient(circle, rgba(230, 129, 5, 0) 0, #fff8f5 100%);
     width: 100vw;
     min-height: 100vh;
     position: fixed;
